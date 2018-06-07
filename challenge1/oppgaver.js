@@ -3,12 +3,16 @@ console.log(latitude)
 
 var tall = 6
 console.log(tall)
+tall++
+console.log(tall)
 // Dette er nå en streng, ikke et tall.
 
-var afrika = ['Chad', 'Uganda']
+var afrika = ['Chad', 'Uganda', 'Egypt', 'Tanzania', ]
 console.log(afrika)
 console.log(afrika[0])
+console.log('The length of africa is ' + afrika.length)
 for (var i = 0; i < afrika.length; i++) {
+  console.log('The value of I is now ' + i)
   console.log(afrika[i])
 }
 // Du bør bruke en form for anførselstegn, jeg foretrekker ''
