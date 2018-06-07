@@ -4,6 +4,7 @@ console.log(latitude)
 var tall = 6
 console.log(tall)
 tall++
+// variabel++ er det samme som variabel = variabel + 1
 console.log(tall)
 // Dette er nå en streng, ikke et tall.
 
@@ -11,6 +12,7 @@ var afrika = ['Chad', 'Uganda', 'Egypt', 'Tanzania', ]
 console.log(afrika)
 console.log(afrika[0])
 console.log('The length of africa is ' + afrika.length)
+// array.length er en javascript-funksjon som gir deg antall elementer i en array.
 for (var i = 0; i < afrika.length; i++) {
   console.log('The value of I is now ' + i)
   console.log(afrika[i])
