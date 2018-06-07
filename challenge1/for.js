@@ -12,3 +12,6 @@ while (counter < 10) {
   console.log(counter)
   counter++
 }
+
+// Det er uansett lurt å lære seg for-løkker, selv om de er mer
+// kompliserte, blir de oftere brukt.
