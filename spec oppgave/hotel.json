@@ -1,0 +1,76 @@
+{
+  "hotelId": 1,
+  "all_inclusive": "0",
+  "hotelName": "Hilton Norway",
+  "hotelDescription": "Example description where you compliment and/or describe the hotel. ",
+  "destination_name": "Oslo",
+  "destination_country": "Norway",
+  "latitude": 39.524,
+  "longtitude": 2.73938,
+  "distance_to_beach": 50,
+  "distance_to_center": 100,
+  "rating": 4,
+  "images": ["//exampleurl.com/1", "//exampleurl.com/2"],
+  "features": [{
+      "name": "Bar",
+      "value": true
+    },
+    {
+      "name": "Air Ventilation",
+      "value": false
+    },
+    {
+      "name": "Pool",
+      "value": false
+    },
+    {
+      "name": "Restaurant",
+      "value": false
+    },
+    {
+      "name": "TV",
+      "value": true
+    },
+    {
+      "name": "Kids Club",
+      "value": true
+    },
+    {
+      "name": "Wifi",
+      "value": true
+    }
+  ],
+  "extras": [{
+      "name": "Child's Pool",
+      "value": true
+    },
+    {
+      "name": "AC",
+      "value": false
+    },
+    {
+      "name": "Pool",
+      "value": false
+    },
+    {
+      "name": "Bar",
+      "value": true
+    },
+    {
+      "name": "Adults only",
+      "value": true
+    },
+    {
+      "name": "Spa",
+      "value": true
+    },
+    {
+      "name": "Internet public",
+      "value": false
+    },
+    {
+      "name": "Internet in a room",
+      "value": true
+    }
+  ]
+}

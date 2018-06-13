@@ -1,0 +1,30 @@
+[{
+  "offer": {
+    "min_adults": "1",
+    "extra_beds": "0",
+    "extra_childbeds": "0",
+    "all_inclusive": "0",
+    "hotel_name": "Estival Centurian Playa",
+    "number_of_nights": "3",
+    "breakfast": "1",
+    "room_type": "Double Room 2-4 pers, Breakfast",
+    "price": 3012,
+    "travel": {
+      "booking_url": "http://www.solfaktor.se/tour/sfp/book1?lang=se;f=89071099;oprice=3446;h=1187971;r=1;a=",
+      "departure_date": null,
+      "destination_airport_code": "BCN",
+      "destination_code": "31645",
+      "destination_name": "Cambrils",
+      "origin_airport_code": "BCN",
+      "origin_arrival_date": "2015-11-04T23:10:00",
+      "origin_arrival_time": null,
+      "origin_departure_date": "2015-11-04T19:45:00",
+      "return_arrival_date": "2015-11-07T14:20:00",
+      "return_arrival_time": null,
+      "return_date": null,
+      "return_departure_date": "2015-11-07T10:35:00",
+      "price": "3446",
+      "price_for_pax": "3446"
+    }
+  }
+}]
