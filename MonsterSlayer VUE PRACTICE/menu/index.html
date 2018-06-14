@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+    <title>Monster Slayer</title>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div id="app">
+  <div v-if="welcome">
+    <h1 class="text-center">
+        <input type="text" v-model="username">
+        <button type="button" @click="pickedName">Yes, I want that name</button>
+    </h1>
+  </div>
+  <div v-else>
+    <div id="menu" class="border padding margin">
+    <nav>
+      <button @click="travel('tavern')">Tavern</button>
+      <button @click="travel('hunt')">Hunt</button>
+      <button @click="travel('armory')">Armory</button>
+      <button @click="travel('weaponShop')">Weapon shop</button>
+      <button @click="travel('info')">What you should know before you play</button>
+    </nav>
+    </div>
+    <div class="container">
+      <div class="left">
+        <div class="border padding">
+          <h2>{{ username }}</h2>
+          <dl>
+            <dt>Health:</dt>
+            <dd>{{ health }}</dd>
+            <dt>Gold:</dt>
+            <dd>{{ gold }}</dd>
+            <dt>Total Defense:</dt>
+            <dd>{{ playerDefense }}</dd>
+            <dt>Weapon:</dt>
+            <dd>{{ currentWeapon.name }} ({{ currentWeapon.minDmg }} - {{ currentWeapon.maxDmg }})</dd>
+            <dt>Head Armor:</dt>
+            <dd>{{ currentHelmet.name }} ({{ currentHelmet.def }} defence)</dd>
+            <dt>Body Armor:</dt>
+            <dd>{{ currentBody.name }}  ({{ currentBody.def }} defence)</dd>
+            <dt>Leg Armor:</dt>
+            <dd>{{ currentLegs.name }}  ({{ currentLegs.def }} defence)</dd>
+            <dt>Current Companion:</dt>
+            <dd>{{ currentCompanion.name }} ({{ currentCompanion.minDmg }} - {{ currentCompanion.maxDmg }})</dd>
+            <dt>Current monster </dt>
+            <dd>{{ currentmonster.monsterName }} </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="container">
+        <div class="right">
+          <div class="border padding">
+          <ul class="gear">
+          <li class="helmet"><img :src="currentHelmet.image"/></li>
+          <li class="body"><img :src="currentBody.image"/></li>
+          <li class="legs"><img :src="currentLegs.image"/></li>
+          <li class="weapon"><img :src="currentWeapon.image"/></li>
+        </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="right">
+    <div class="border padding">
+      <ul class="gear">
+        <li class="companionStyle"><img :src="currentCompanion.image"/></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <div class="right">
+        <div class="center" v-if="location === 'tavern'">
+          After a long day, you decide to
+          <div class= "padding">
+          <button @click='companionGet'> Gather Companion</button>
+          </div>
+          <nav v-if="!gamble">
+            <button @click='startGambling'> Start Gambling</button>
+          </nav>
+            <div v-if="gamble" class="container border padding margin center">
+              <button @click='bet(10)'>Small Bet (10GP)</button>
+              <button @click='bet(20)'>Half Bet (20GP)</button>
+              <button @click='bet(30)'>Big Bet (30GP)</button>
+              <button @click='noGamble'>Exit Gambling menu</button>
+              <p> You're currently gambling. </p>
+            </div>
+          <nav v-if="!heal">
+            <button @click='startHealing'>Treat your wounds</button>
+          </nav>
+          <div v-if="heal" class="container border padding margin">
+              <button @click='startSleeping'> Sleep (+20HP)</button>
+              <button @click='lesserHealing'>Use Lesser Potion (+40HP)</button>
+              <button @click='healingPotion'>Use Healing Potion (+80HP)</button>
+              <button @click='lifeElixir'>Use Life Elixir (+150HP)</button>
+              <button @click='noHeal'>Exit healing menu</button>
+              <p> You're currently healing </p>
+          </div>
+        </div>
+        <div v-if="location === 'hunt'">
+          What are you looking to do?
+          <nav v-if="!battle">
+                <button @click='startFight'>Hunt wild monsters</button>
+                <button @click='startCave'>Dive into a dungeon (Best equipment RECOMMENDED)</button>
+          </nav>
+          <div v-if="battle" class="container ">
+            <button @click='giveUp'>Escape</button>
+            <button @click='regularAttack'>Attack</button>
+            <button @click='fightingHeal'>Spiritual Buff [Heal]</button>
+            <p>The battle has started</p>
+            <ul>
+              <li>{{username}}: {{ health }}</li>
+              <li>{{currentmonster.monsterName}}: {{ monsterHealth }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div v-if="location === 'armory'">
+          You're at the Armory
+          <nav class="center container">
+                <button @click='helmShop'>Buy Head Armor</button>
+                <button @click='bodyShop'>Buy Body Armor</button>
+                <button @click='legsShop'>Buy Leg Armor</button>
+          </nav>
+        </div>
+
+        <div v-if="location === 'weaponShop'">
+          You're at the Weapon shop
+          <nav class="center">
+                <button @click='weaponUpgrade'>Upgrade your weapon</button>
+          </nav>
+        </div>
+        <div v-if="location === 'info'">
+          <p class="center"> You're at the info center </p>
+        </div>
+      </div>
+      xn
+    </div>
+   </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
